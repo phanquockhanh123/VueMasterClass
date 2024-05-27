@@ -4,32 +4,39 @@
     <div class="flex flex-1 flex-nowrap h-full text-base font-light">
       <div class="flex h-full flex-1 relative items-center pr-3">
         <label class="absolute left-0 -top-10">Role</label>
-        <input type="text" v-model="role" placeholder="Software Engineer" class="w-full text-lg font-normal focus:outline-none"/>
+        <!-- <input type="text" v-model="role" placeholder="Software Engineer" class="w-full text-lg font-normal focus:outline-none"/> -->
+        <text-input placeholder="Software Engineer" v-model="role"/>
       </div>
-      
+
       <span class="flex items-center h-full border-r border-l border-brand-gray-3 bg-brand-gray-2 px-3">in</span>
 
       <div class="flex h-full flex-1 relative items-center pl-3">
         <label class="absolute left-0 -top-10">Where?</label>
-        <input type="text" v-model="location" v-on:input="location" placeholder="Viet Nam" class="w-full text-lg font-normal focus:outline-none"/>
+        <!-- <input type="text" v-model="location" v-on:input="location" placeholder="Viet Nam"
+          class="w-full text-lg font-normal focus:outline-none" /> -->
+        <text-input placeholder="Viet Nam" v-model="location"></text-input>
       </div>
-    </div> 
-    <action-button text="Search" type="secondary" class="rounded-r-3xl"/>
+    </div>
+    <action-button text="Search" type="secondary" class="rounded-r-3xl" />
   </form>
 </template>
 <script>
-import ActionButton from '@/components/ActionButton.vue'
+import ActionButton from '@/components/Shared/ActionButton.vue'
+import TextInput from '@/components/Shared/TextInput.vue'
 
 export default {
   name: "JobSearchForm",
   components: {
-    ActionButton
+    ActionButton,
+    TextInput,
   },
   data() {
     return {
       role: "",
       location: ""
     }
+  },
+  methods: {
   }
 }
 
